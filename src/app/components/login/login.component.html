@@ -1,0 +1,29 @@
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 px-lg-4 align-items-center mx-auto">
+        <div class="card">
+          <div class="card-header px-lg-5 py-4">
+            <div class="card-heading text-purple text-center">
+              <img class="img-fluid mb-4" width="150" src="/assets/images/logo.svg" alt="" >
+              <h2 class="m-0">Sistema de Inventario</h2>
+            </div>
+          </div>
+          <div class="card-body p-lg-5">
+            <form id="loginForm" (ngSubmit)=login()>
+              <div class="form-floating mb-3">
+                <input [(ngModel)]="email" class="form-control" id="floatingInput" type="email" placeholder="email" required [ngModelOptions]="{standalone: true}">
+                <label for="floatingInput">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input [(ngModel)]="password" class="form-control" id="floatingPassword" type="password" placeholder="Password" required [ngModelOptions]="{standalone: true}">
+                <label for="floatingPassword">Password</label>
+              </div>
+              <button class="btn btn-primary btn-sm" type="submit">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

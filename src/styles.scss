@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap");
+
+$primary: #0b3680;
+$secondary: #000;
+$purple: #e50292;
+$background-table-header: #ccc;
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-purple {
+  color: $purple !important;
+}
+
+.btn-primary {
+  background-color: $purple !important;
+  border-color: $purple !important;
+}
+
+.btn-primary:hover{
+  opacity: 0.7;
+}
+
+.table-header{
+  color: white;
+  border: #ccc;
+  font-weight: normal;
+}
+
+.table-header tr th{
+  background-color: $secondary !important;
+  font-weight: normal;
+}
+
+h3{
+  background-color: #ccc;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 4px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.icon-product-image{
+  width: 35px;
+  height: 35px;
+}
+
+div label:first-child{
+  font-weight: bold;
+}
+
+.add-div:hover{
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

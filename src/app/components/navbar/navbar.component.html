@@ -1,0 +1,29 @@
+<section class="mt-2 mb-4">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col">
+        <img src="assets/images/logo-alt.svg" width="150px" class="mb-2">
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" routerLink="/products" routerLinkActive="active"><a class="nav-link">Productos</a></li>
+          <!-- <li class="nav-item" routerLink="/raw-materials" routerLinkActive="active"><a class="nav-link">Materia Prima</a></li> -->
+          <li class="nav-item" routerLink="/suppliers" routerLinkActive="active"><a class="nav-link">Proveedores</a></li>
+          <li class="nav-item" routerLink="/users" routerLinkActive="active"><a class="nav-link">Usuarios</a></li>
+        </ul>
+      </div>
+      <div class="order-lg-last">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a (click)="logout()" class="nav-link">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>

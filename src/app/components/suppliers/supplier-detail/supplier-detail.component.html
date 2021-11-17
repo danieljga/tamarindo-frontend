@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{supplier.name}}</h5>
+    <ul>
+      <li>Fecha Registro: {{supplier.createdDate | date }} <span appCheckSuppliers [date]="supplier.createdDate"></span></li>
+      <li>Correo Electrónico: {{supplier.email}}</li>
+      <li>Teléfono: {{supplier.phone}}</li>
+      <li>Dirección: {{supplier.address}}</li>
+      <li>Nombre Contacto: {{supplier.contactName}}</li>
+    </ul>
+    <button (click)="edit(editSupplierModal)" type="button" class="btn btn-warning">Editar</button>
+    <button (click)="delete()" type="button" class="btn btn-danger float-end">Eliminar</button>
+  </div>
+</div>
+
+<ng-template #editSupplierModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" ngbAutofocus id="modal-basic-title">Editar Proveedor</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editForm" (ngSubmit)="onEditSubmit()">
+      <div class="form-group mb-3">
+        <label for="name">Nombre<span class="asterisco text-danger fw-bold">*</span></label>
+        <input maxlength="200" type="text" class="form-control form-control-sm" id="name" formControlName="name">
+      </div>
+      <div class="form-group mb-3">
+        <label for="email">Correo Electrónico<span class="asterisco text-danger fw-bold">*</span></label>
+        <input maxlength="100" type="email" class="form-control form-control-sm" id="email" formControlName="email">
+      </div>
+      <div class="form-group mb-3">
+        <label for="phone">Teléfono<span class="asterisco text-danger fw-bold">*</span></label>
+        <input maxlength="20" type="text" class="form-control form-control-sm" id="phone" formControlName="phone">
+      </div>
+      <div class="form-group mb-3">
+        <label for="contact-name">Nombre Contacto</label>
+        <input maxlength="50" type="text" class="form-control form-control-sm" id="contact-name" formControlName="contactName">
+      </div>
+      <div class="form-group mb-3">
+        <label for="address">Dirección<span class="asterisco text-danger fw-bold">*</span></label>
+        <textarea class="form-control form-control-sm" id="address" formControlName="address"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm" ><fa-icon [icon]="faSave"></fa-icon> Guardar</button>
+    </form>
+  </div>
+</ng-template>

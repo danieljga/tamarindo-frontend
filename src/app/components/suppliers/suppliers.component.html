@@ -1,0 +1,49 @@
+<div class="container">
+  <div (click)="showAddModal(addSupplierModal)" class="col-12 add-div text-purple mb-2 text-end">
+    <fa-icon [icon]="faPlusCircle"></fa-icon>
+    Agregar Proveedor
+  </div>
+  <div class="row">
+    <div *ngFor="let supplier of suppliers" class="col-4">
+      <app-supplier-detail
+        [supplier]="supplier"
+        (supplierEdited)="editSupplier($event)"
+        (deleteRequest)="deleteSupplier(supplier)"
+      ></app-supplier-detail>
+    </div>
+  </div>
+</div>
+
+<ng-template #addSupplierModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" ngbAutofocus id="modal-basic-title">Agregar Proveedor</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addForm" (ngSubmit)="onAddSubmit()">
+      <div class="form-group mb-3">
+        <label for="name">Nombre<span class="asterisco text-danger fw-bold">*</span></label>
+        <input maxlength="200" type="text" class="form-control form-control-sm" id="name" formControlName="name">
+      </div>
+      <div class="form-group mb-3">
+        <label for="email">Correo Electrónico<span class="asterisco text-danger fw-bold">*</span></label>
+        <input maxlength="100" type="email" class="form-control form-control-sm" id="email" formControlName="email">
+      </div>
+      <div class="form-group mb-3">
+        <label for="phone">Teléfono<span class="asterisco text-danger fw-bold">*</span></label>
+        <input maxlength="20" type="text" class="form-control form-control-sm" id="phone" formControlName="phone">
+      </div>
+      <div class="form-group mb-3">
+        <label for="contact-name">Nombre Contacto</label>
+        <input maxlength="50" type="text" class="form-control form-control-sm" id="contact-name" formControlName="contactName">
+      </div>
+      <div class="form-group mb-3">
+        <label for="address">Dirección<span class="asterisco text-danger fw-bold">*</span></label>
+        <textarea class="form-control form-control-sm" id="address" formControlName="address"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm" ><fa-icon [icon]="faSave"></fa-icon> Guardar</button>
+    </form>
+  </div>
+</ng-template>

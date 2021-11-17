@@ -1,0 +1,12 @@
+<ngx-bootstrap-treeview
+    [isOpened]="true"
+    (leafClicked)="defaultStyleLeafClickedEventHandler($event)"
+    [tree]="roots[0]"
+    [selectedLeafIcon]="faCheckSquare"
+    [unselectedLeafIcon]="faSquare"
+    [openedFolderIcon]="faFolderOpen"
+    [closedFolderIcon]="faFolder"
+    [anyChildrenSelectedIcon]="faMinus"
+    [allChildrenSelectedIcon]="faCheck"
+>
+</ngx-bootstrap-treeview>

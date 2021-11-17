@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <input [(ngModel)]="filterProduct" type="text" class="forms-control" placeholder="Buscar.." />
+      <button routerLink="add-product" class="btn btn-primary btn-sm float-end mb-2"><fa-icon [icon]="faPlusCircle"></fa-icon> Agregar Producto</button>
+      <button routerLink="categories" class="btn btn-primary btn-sm float-end mb-2 me-3"><fa-icon [icon]="faList"></fa-icon> Categorías</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead class="table-header">
+          <tr>
+            <th>Id</th>
+            <th>Reference</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products | filter: filterProduct" clothStyle [product]="product">
+            <td>{{product.id}}</td>
+            <td>{{product.reference}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
